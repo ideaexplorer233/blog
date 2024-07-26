@@ -1,0 +1,77 @@
+---
+import type { Metadata } from "./meta";
+
+type Props = Metadata;
+
+import config from "../siteConfig.ts";
+
+const {
+    title = config.siteName,
+    description = config.siteDescription,
+    thumbnail,
+    alt,
+    author,
+    language,
+} = Astro.props;
+
+const theme_color = "#1c74ee";
+const url = Astro.url;
+
+import { getMetaLangTag } from "./meta.ts";
+const metaLangTag = getMetaLangTag(language);
+---
+
+<meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+{
+    /* <meta http-equiv="content-language" content={language} />
+        (Deprecated, use <html lang={language}> instead!) */
+}
+<link rel="icon" type="image/png" href="/favicon.png" />
+<meta name="viewport" content="width=device-width" />
+<title>{title}</title>
+<meta name="generator" content={Astro.generator} />
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Standard -->
+{author && <meta name="author" content={author} />}
+<meta name="description" content={description} />
+<meta name="theme-color" content={theme_color} />
+
+<!-- Twitter -->
+{
+    thumbnail ? (
+        <>
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:image" content={thumbnail} />
+            <meta name="twitter:image:alt" content={alt} />
+        </>
+    ) : (
+        <meta name="twitter:card" content="summary" />
+    )
+    /* Summary Image: 1:1, 144x144-4096x4096
+            Large Summary: 2:1, 300x157-4096x4096
+            TODO: Check the image size to decide which type should be used */
+}
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{
+    /* <meta name="twitter:site" content="@SiteOwner" />
+        <meta name="twitter:creator" content="@ContentOwner" /> */
+}
+
+<!-- OpenGraph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url} />
+{
+    thumbnail && (
+        <>
+            <meta property="og:image" content={thumbnail} />
+            <meta property="og:image:alt" content={alt} />
+        </>
+    )
+}
+{metaLangTag && <meta property="og:locale" content={metaLangTag} />}
+{/* <meta property="og:locale:alternate" content="" /> */}

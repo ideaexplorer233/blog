@@ -1,0 +1,25 @@
+---
+import type { Metadata } from "../components/meta";
+import Meta from "../components/Meta.astro";
+
+type Props = Metadata;
+
+const { title, description, thumbnail, alt, author, language } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={language}>
+    <head>
+        <Meta
+            title={title}
+            description={description}
+            thumbnail={thumbnail}
+            alt={alt}
+            author={author}
+            language={language}
+        />
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
