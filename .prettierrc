@@ -1,0 +1,9 @@
+{
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": ["*.js", "*.jsx", "*.ts", "*.tsx", "*.cjs", "*.mjs"],
+            "options": { "tabWidth": 2 }
+        }
+    ]
+}
