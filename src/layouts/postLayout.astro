@@ -1,7 +1,16 @@
 ---
-import BaseLayout from "./baseLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-    <h1>Post</h1>
-</BaseLayout>
+    <div class="flex">
+        <aside
+            class="bg-sky-500/30 sticky top-12 w-1/5 h-min rounded mt-0 m-4 p-2 hidden md:block"
+        >
+            <a href="/p/testendpoint#">It's cat</a>
+        </aside>
+        <main class="prose dark:prose-invert">
+            <slot />
+        </main>
+    </div></BaseLayout
+>

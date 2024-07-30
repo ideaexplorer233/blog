@@ -27,5 +27,5 @@ export const collections = {
       name: z.string(),
       description: z.string(),
     }),
-  })
+  }),
 };
