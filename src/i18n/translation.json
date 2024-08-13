@@ -1,0 +1,20 @@
+{
+    "en": {
+        "base.site.name": "Blog",
+        "base.site.description": "A simple blog made with Astro.",
+        "nav.posts": "Posts",
+        "nav.about": "About",
+        "nav.auto": "Auto",
+        "nav.dark": "Dark",
+        "nav.light": "Light"
+    },
+    "zh": {
+        "base.site.name": "Blog",
+        "base.site.description": "用 Astro 构建的简单博客。",
+        "nav.posts": "文章",
+        "nav.about": "关于",
+        "nav.auto": "自动",
+        "nav.dark": "深色",
+        "nav.light": "浅色"
+    }
+}

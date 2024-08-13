@@ -7,15 +7,6 @@
  * https://www.w3.org/International/questions/qa-choosing-language-tags
  */
 
-export type Metadata = {
-    title?: string;
-    description?: string;
-    thumbnail?: string;
-    alt?: string;
-    author?: string;
-    language?: string;
-};
-
 const tags: any = {
     en: "en_US", // IANA don't have a UK variation
     "zh-Hans-CN": "zh_CN",

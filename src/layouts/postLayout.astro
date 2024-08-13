@@ -1,16 +1,24 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+interface Props {
+    content: CollectionEntry<"posts">;
+}
+
+const { Content, headings } = await Astro.props.content.render();
 ---
 
 <BaseLayout>
-    <div class="flex">
-        <aside
-            class="bg-sky-500/30 sticky top-12 w-1/5 h-min rounded mt-0 m-4 p-2 hidden md:block"
+    <div class="flex justify-center p-4 gap-4">
+        <main
+            class="prose dark:prose-invert
+            prose-a:decoration-[0.15em]
+            prose-a:bg-gradient-to-t prose-a:from-sky-500/75 prose-a:from-50% prose-a:to-50%
+            prose-a:relative prose-a:bg-[0_0%] prose-a:bg-[length:100%_200%]
+            prose-a:duration-300 prose-a:transition-all hover:prose-a:bg-[0_100%]"
         >
-            <a href="/p/testendpoint#">It's cat</a>
-        </aside>
-        <main class="prose dark:prose-invert">
-            <slot />
+            <Content />
         </main>
-    </div></BaseLayout
->
+    </div>
+</BaseLayout>

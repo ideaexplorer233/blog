@@ -1,13 +1,14 @@
 ---
-import type { Metadata } from "./meta";
+import { createTranslation } from "../i18n/utils";
+import type { Metadata } from "../schemas";
 
 type Props = Metadata;
 
-import config from "../siteConfig.ts";
+const t = createTranslation(Astro.currentLocale);
 
 const {
-    title = config.siteName,
-    description = config.siteDescription,
+    title = t("base.site.name"),
+    description = t("base.site.description"),
     thumbnail,
     alt,
     author,
@@ -27,7 +28,7 @@ const metaLangTag = getMetaLangTag(language);
     /* <meta http-equiv="content-language" content={language} />
         (Deprecated, use <html lang={language}> instead!) */
 }
-<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="icon" type="image/png" href="/favicon.svg" />
 <meta name="viewport" content="width=device-width" />
 <title>{title}</title>
 <meta name="generator" content={Astro.generator} />

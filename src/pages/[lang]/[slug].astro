@@ -1,0 +1,22 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import PostLayout from "../../layouts/PostLayout.astro";
+
+type Props = CollectionEntry<"posts">;
+
+export async function getStaticPaths() {
+    const posts = await getCollection("posts");
+    // Attention! Do never use Astro.currentLocale here.
+    // Because you can't read Astro.currentLocale in getStaticPaths.
+    // See https://discord.com/channels/830184174198718474/1272133180081836114
+    return posts.map((post) => ({
+        params: {
+            lang: post.slug.split("/")[0],
+            slug: post.slug.split("/")[1],
+        },
+        props: post,
+    }));
+}
+---
+
+<PostLayout content={Astro.props} />
