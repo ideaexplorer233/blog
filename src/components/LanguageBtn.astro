@@ -1,0 +1,26 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const defaultLang = Astro.url.pathname.startsWith(
+    getRelativeLocaleUrl(Astro.currentLocale!)
+);
+
+const toLocale = Astro.currentLocale === "zh" ? "en" : "zh";
+const page = Astro.url.pathname.slice(
+    getRelativeLocaleUrl(Astro.currentLocale!).length
+);
+
+const relLink = getRelativeLocaleUrl(toLocale, page);
+
+console.log(getRelativeLocaleUrl("zh", "blog"));
+
+const linkText = Astro.currentLocale === "zh" ? "En" : "中";
+---
+
+{
+    defaultLang && (
+        <>
+            <a href={relLink}>{linkText}</a>
+        </>
+    )
+}

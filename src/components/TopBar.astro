@@ -1,15 +1,12 @@
 ---
 import { createTranslation } from "../i18n/utils";
+import LanguageBtn from "./LanguageBtn.astro";
 import DarkModeBtn from "./DarkModeBtn.svelte";
+
+import styles from "../styles/components.module.css";
 
 const t = createTranslation(Astro.currentLocale);
 ---
-
-<style>
-    .separation {
-        @apply select-none text-gray-500 dark:text-gray-400;
-    }
-</style>
 
 <header class="bg-sky-500/50 sticky top-0 rounded m-4">
     <nav>
@@ -18,15 +15,13 @@ const t = createTranslation(Astro.currentLocale);
                 <a class="font-mono font-bold" href="/">{t("base.site.name")}</a
                 >
             </li>
-            <li class="separation"><span>-</span></li>
+            <li class={styles.separation}><span>-</span></li>
             <li><a href="/p">{t("nav.posts")}</a></li>
-            <li class="separation"><span>/</span></li>
+            <li class={styles.separation}><span>/</span></li>
             <li><a href="/about">{t("nav.about")}</a></li>
             <li class="grow"></li>
-            <li><span class="separation">/</span></li>
-            <li>
-                <DarkModeBtn client:only="svelte" />
-            </li>
+            <LanguageBtn />
+            <DarkModeBtn client:only="svelte" />
         </ul>
     </nav>
 </header>

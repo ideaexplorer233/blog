@@ -25,8 +25,12 @@
                 document.querySelector("body")?.classList.remove("light");
         }
     }
+
+    import styles from "../styles/components.module.css";
 </script>
 
+<li><span class={styles.separation}>/</span></li>
+<li>
 <button on:click={handleThemeSwitch}>
     {#if currentTheme === "dark"}
         Dark
@@ -36,3 +40,4 @@
         Auto
     {/if}
 </button>
+</li>
