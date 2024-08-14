@@ -23,6 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# ignore test posts and todo list.
+# ignore test posts and todo list
 src/content/posts/
 TODO.md
