@@ -8,3 +8,41 @@ main {
 .astro-code {
     overflow: visible !important;
 }
+
+/* Style from vitepress */
+span.line.diff,
+span.line.highlighted {
+    margin: 0 -16px;
+    padding: 0 16px;
+    width: calc(100% + 32px);
+    display: inline-block;
+    position: relative;
+}
+
+span.line.diff.add {
+    background: rgba(16, 185, 129, 0.16);
+}
+span.line.diff.add::before,
+span.line.diff.remove::before {
+    width: 8px;
+    position: absolute;
+    display: block;
+    left: 4px;
+    color: #7f7f7f;
+}
+
+span.line.diff.add::before {
+    content: "+";
+}
+
+span.line.diff.remove::before {
+    content: "-";
+}
+
+span.line.diff.remove {
+    background: rgba(244, 63, 94, 0.16);
+}
+
+span.line.highlighted {
+    background: rgba(101, 117, 133, 0.16);
+}

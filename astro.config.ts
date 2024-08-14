@@ -2,6 +2,10 @@ import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import { transformerTwoslash } from "@shikijs/twoslash";
+import {
+    transformerNotationDiff,
+    transformerNotationHighlight,
+} from "@shikijs/transformers";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -53,7 +57,11 @@ export default defineConfig({
         shikiConfig: {
             // wrap: true,
             theme: "github-dark",
-            transformers: [transformerTwoslash()],
+            transformers: [
+                transformerTwoslash(),
+                transformerNotationDiff(),
+                transformerNotationHighlight(),
+            ],
         },
     },
 });
