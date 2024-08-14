@@ -1,31 +1,14 @@
-/* @import "./typo.css"; */
+@import "./content.css";
 
 body {
     font-family:
-    /*
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-    */
-        "Segoe UI",
-        "Roboto",
-        "Oxygen",
-        "Ubuntu",
-        "Cantarell",
-        "Fira Sans",
-        "Droid Sans",
-        "Helvetica Neue",
-        Helvetica,
-        "Segoe UI Emoji",
-        "Apple Color Emoji",
-        "Noto Color Emoji",
-        "PingFang SC",
-        "Hiragino Sans GB",
-        "Heiti SC",
-        "Microsoft YaHei",
-        "WenQuanYi Micro Hei",
-        sans-serif;
-    line-height: 1.4;
+    /*  system-ui,-apple-system, BlinkMacSystemFont,*/ "Segoe UI",
+        "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", Helvetica, "Segoe UI Emoji", "Apple Color Emoji",
+        "Noto Color Emoji", "PingFang SC", "Hiragino Sans GB", "Heiti SC",
+        "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    /* Set by tailwind:
+    line-height: 1.4; */
     max-width: 1024px;
     margin: 20px auto;
     padding: 0 10px;

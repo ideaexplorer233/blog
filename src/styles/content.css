@@ -1,0 +1,10 @@
+main {
+    --twoslash-popup-bg: #2a2a2a;
+}
+
+/* Fix twoslash popup
+ * See https://github.com/withastro/astro/issues/10382#issuecomment-2200731838
+ */
+.astro-code {
+    overflow: visible !important;
+}
