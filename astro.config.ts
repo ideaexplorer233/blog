@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
+import { transformerTwoslash } from "@shikijs/twoslash";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -21,8 +22,13 @@ export default defineConfig({
     ],
     i18n: {
         defaultLocale: "zh",
+        routing: {
+            prefixDefaultLocale: true,
+        },
         locales: [
+            "zh",
             "en",
+            /*
             {
                 path: "zh",
                 codes: [
@@ -40,13 +46,14 @@ export default defineConfig({
                     "zh-Hant-SG",
                     "zh-Hant-MO",
                 ],
-            },
+            }*/
         ],
     },
     markdown: {
         shikiConfig: {
-            wrap: true,
-            transformers: [],
+            // wrap: true,
+            theme: "github-dark",
+            transformers: [transformerTwoslash()],
         },
     },
 });
