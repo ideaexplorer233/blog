@@ -15,16 +15,16 @@
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/svelte": "^5.7.0",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.13.2",
+    "astro": "^4.14.2",
     "floating-ui": "^5.2.8",
     "svelte": "^4.2.18",
-    "tailwindcss": "^3.4.9",
+    "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4"
   },
   "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903",
   "devDependencies": {
-    "@shikijs/transformers": "^1.12.1",
-    "@shikijs/twoslash": "^1.12.1",
+    "@shikijs/transformers": "^1.14.1",
+    "@shikijs/twoslash": "^1.14.1",
     "@tailwindcss/typography": "^0.5.14",
     "prettier": "3.3.3"
   }
