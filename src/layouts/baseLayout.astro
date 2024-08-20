@@ -12,19 +12,14 @@ import TopBar from "../components/TopBar.astro";
 <!doctype html>
 <html lang={language}>
     <head>
-        <Meta
-            title={title}
-            description={description}
-            thumbnail={thumbnail}
-            alt={alt}
-            author={author}
-            language={language}
-        />
+        <Meta />
     </head>
-    <body
-        class="bg-sky-100 text-black dark:bg-gray-900 dark:text-white \
-                transition-colors duration-300"
-    >
+    <body class="bg-sky-100 text-black dark:bg-gray-900 dark:text-white">
+        <style>
+            body.auto {
+                @apply transition-colors duration-300 ease-in-out;
+            }
+        </style>
         <TopBar />
         <slot />
     </body>
