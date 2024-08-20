@@ -1,12 +1,34 @@
 @import "./content.css";
 
+@font-face {
+    font-family: "fusion-pixel";
+    src: url("/fonts/fusion-pixel-10px-monospaced-zh_hans.woff2");
+}
+
 body {
     font-family:
-    /*  system-ui,-apple-system, BlinkMacSystemFont,*/ "Segoe UI",
-        "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", Helvetica, "Segoe UI Emoji", "Apple Color Emoji",
-        "Noto Color Emoji", "PingFang SC", "Hiragino Sans GB", "Heiti SC",
-        "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+        fusion-pixel,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        Helvetica,
+        "Segoe UI Emoji",
+        "Apple Color Emoji",
+        "Noto Color Emoji",
+        "PingFang SC",
+        "Hiragino Sans GB",
+        "Heiti SC",
+        "Microsoft YaHei",
+        "WenQuanYi Micro Hei",
+        sans-serif;
     /* Set by tailwind:
     line-height: 1.4; */
     max-width: 1024px;

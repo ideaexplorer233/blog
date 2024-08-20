@@ -6,6 +6,9 @@ export default {
     "&:is(.dark, .dark *)"
   ]],
   theme: {
+    listStyleType: {
+      square: 'square',
+    },
     extend: {},
   },
   plugins: [

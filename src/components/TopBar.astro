@@ -2,26 +2,44 @@
 import { createTranslation } from "../i18n/utils";
 import LanguageBtn from "./LanguageBtn.astro";
 import DarkModeBtn from "./DarkModeBtn.svelte";
+import { Icon } from "astro-icon/components";
 
-import styles from "../styles/components.module.css";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const t = createTranslation(Astro.currentLocale);
 ---
 
 <header class="bg-sky-500/50 sticky top-0 rounded m-4">
     <nav>
-        <ul class="list-none flex flex-row flex-wrap py-2 px-4 gap-2">
+        <ul class="list-none flex flex-row items-center py-2 px-4 gap-2">
             <li>
-                <a class="font-mono font-bold" href="/">{t("base.site.name")}</a
+                <a class="font-bold" href="/">{t("base.site.name")}</a>
+            </li>
+            <li
+                role="separator"
+                class="select-none font-extralight text-slate-400"
+            >
+                -
+            </li>
+            <li>
+                <a href={getRelativeLocaleUrl(Astro.currentLocale!, "/")}
+                    >{t("nav.posts")}</a
                 >
             </li>
-            <li class={styles.separation}><span>-</span></li>
-            <li><a href="/p">{t("nav.posts")}</a></li>
-            <li class={styles.separation}><span>/</span></li>
+            <li
+                role="separator"
+                class="select-none font-extralight text-slate-400"
+            >
+                /
+            </li>
             <li><a href="/about">{t("nav.about")}</a></li>
             <li class="grow"></li>
             <LanguageBtn />
-            <DarkModeBtn client:only="svelte" />
+            <DarkModeBtn client:only="svelte">
+                <Icon name="pixelarticons:moon" slot="dark" />
+                <Icon name="pixelarticons:sun-alt" slot="light" />
+                <Icon name="pixelarticons:device-laptop" slot="auto" />
+            </DarkModeBtn>
         </ul>
     </nav>
 </header>

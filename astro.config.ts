@@ -6,8 +6,9 @@ import {
     transformerNotationDiff,
     transformerNotationHighlight,
 } from "@shikijs/transformers";
-
 import sitemap from "@astrojs/sitemap";
+
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,6 +24,7 @@ export default defineConfig({
                 },
             },
         }),
+        icon({}),
     ],
     i18n: {
         defaultLocale: "zh",
@@ -33,24 +35,24 @@ export default defineConfig({
             "zh",
             "en",
             /*
-            {
-                path: "zh",
-                codes: [
-                    "zh",
-                    "zh-Hans",
-                    "zh-Hans-CN",
-                    "zh-Hans-HK",
-                    "zh-Hans-TW",
-                    "zh-Hans-SG",
-                    "zh-Hans-MO",
-                    "zh-Hant",
-                    "zh-Hant-CN",
-                    "zh-Hant-HK",
-                    "zh-Hant-TW",
-                    "zh-Hant-SG",
-                    "zh-Hant-MO",
-                ],
-            }*/
+    {
+        path: "zh",
+        codes: [
+            "zh",
+            "zh-Hans",
+            "zh-Hans-CN",
+            "zh-Hans-HK",
+            "zh-Hans-TW",
+            "zh-Hans-SG",
+            "zh-Hans-MO",
+            "zh-Hant",
+            "zh-Hant-CN",
+            "zh-Hant-HK",
+            "zh-Hant-TW",
+            "zh-Hant-SG",
+            "zh-Hant-MO",
+        ],
+    }*/
         ],
     },
     markdown: {

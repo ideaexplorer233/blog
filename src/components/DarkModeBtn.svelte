@@ -1,6 +1,6 @@
 <script lang="ts">
     let currentTheme = window.localStorage.getItem("theme");
-    const body = document.querySelector("body")!;
+    const body = document.body;
     switch (currentTheme) {
         case "dark":
             body.classList.add("dark");
@@ -28,19 +28,17 @@
                 body.classList.remove("light");
         }
     }
-
-    import styles from "../styles/components.module.css";
 </script>
 
-<li><span class={styles.separation}>/</span></li>
+<li role="separator" class="select-none font-extralight text-slate-400">/</li>
 <li>
-    <button on:click={handleThemeSwitch}>
+    <button on:click={handleThemeSwitch} class="flex">
         {#if currentTheme === "dark"}
-            Dark
+            <slot name="dark" />
         {:else if currentTheme === "light"}
-            Light
+            <slot name="light" />
         {:else}
-            Auto
+            <slot name="auto" />
         {/if}
     </button>
 </li>
