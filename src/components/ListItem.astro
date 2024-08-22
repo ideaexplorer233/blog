@@ -1,0 +1,19 @@
+---
+import { type CollectionEntry } from "astro:content";
+
+type Props = {
+    data: CollectionEntry<"posts">;
+};
+
+const data = Astro.props.data.data;
+---
+
+<li>
+    <a href={"/" + Astro.props.data.slug}>{data.title}</a>
+    <span class="mx-2">-</span>
+    <span
+        >{data.authors} ({
+            data.pubDate.toLocaleDateString(Astro.currentLocale)
+        })</span
+    >
+</li>

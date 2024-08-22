@@ -1,0 +1,19 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+---
+
+<BaseLayout>
+    <div class="flex justify-center p-4 gap-4">
+        <slot name="menu" />
+        <main
+            class="prose dark:prose-invert
+            prose-a:decoration-[0.15em]
+            prose-a:bg-gradient-to-t prose-a:from-sky-500/75 prose-a:from-50% prose-a:to-50%
+            prose-a:relative prose-a:bg-[0_0%] prose-a:bg-[length:100%_200%]
+            prose-a:duration-300 prose-a:transition-all hover:prose-a:bg-[0_100%]
+            prose-ul:list-square"
+        >
+            <slot />
+        </main>
+    </div>
+</BaseLayout>
