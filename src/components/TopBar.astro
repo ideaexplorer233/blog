@@ -15,23 +15,13 @@ const t = createTranslation(Astro.currentLocale);
             <li>
                 <a class="font-bold" href="/">{t("base.site.name")}</a>
             </li>
-            <li
-                role="separator"
-                class="select-none font-extralight text-slate-400"
-            >
-                -
-            </li>
+            <li class="select-none font-extralight text-slate-400">-</li>
             <li>
                 <a href={getRelativeLocaleUrl(Astro.currentLocale!, "/")}
                     >{t("nav.posts")}</a
                 >
             </li>
-            <li
-                role="separator"
-                class="select-none font-extralight text-slate-400"
-            >
-                /
-            </li>
+            <li class="select-none font-extralight text-slate-400">/</li>
             <li><a href="/about">{t("nav.about")}</a></li>
             <li class="grow"></li>
             <LanguageBtn />

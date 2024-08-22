@@ -30,7 +30,7 @@
     }
 </script>
 
-<li role="separator" class="select-none font-extralight text-slate-400">/</li>
+<li class="select-none font-extralight text-slate-400">/</li>
 <li>
     <button on:click={handleThemeSwitch} class="flex">
         {#if currentTheme === "dark"}
