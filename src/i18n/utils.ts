@@ -24,3 +24,7 @@ function getTranslation(locale: string, key: string) {
 export function createTranslation(locale: string | undefined) {
     return (key: string) => getTranslation(locale || defaultLocale, key);
 }
+
+export function getLangPaths() {
+    return [{ params: { lang: "en" } }, { params: { lang: "zh" } }];
+}
