@@ -1,14 +1,22 @@
 import { defineConfig } from "astro/config";
+
+// astro intergrations
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
+import sitemap from "@astrojs/sitemap";
+import icon from "astro-icon";
+
+// rehype plugins
+import rehypeExternalLinks from "rehype-external-links";
+import { rehypeHeadingIds } from "@astrojs/markdown-remark";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+
+// shiki transformers
 import { transformerTwoslash } from "@shikijs/twoslash";
 import {
     transformerNotationDiff,
     transformerNotationHighlight,
 } from "@shikijs/transformers";
-import sitemap from "@astrojs/sitemap";
-
-import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -56,6 +64,26 @@ export default defineConfig({
         ],
     },
     markdown: {
+        rehypePlugins: [
+            rehypeHeadingIds,
+            [
+                rehypeExternalLinks,
+                {
+                    content: { type: "text", value: "↗" },
+                    contentProperties: { style: "display: inline-block" },
+                    // https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links
+                    rel: [],
+                },
+            ],
+            [
+                rehypeAutolinkHeadings,
+                {
+                    behaviour: "prepend",
+                    properties: { class: "not-prose" },
+                    content: { type: "text", value: "#" },
+                },
+            ],
+        ],
         shikiConfig: {
             // wrap: true,
             theme: "github-dark",
