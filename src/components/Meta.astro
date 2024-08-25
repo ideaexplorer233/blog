@@ -33,6 +33,12 @@ const metaLangTag = getMetaLangTag(language);
 <title>{title}</title>
 <meta name="generator" content={Astro.generator} />
 <link rel="sitemap" href="/sitemap-index.xml" />
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Your Site's Title"
+    href={new URL("rss.xml", Astro.site)}
+/>
 
 <!-- Standard -->
 {author && <meta name="author" content={author} />}
