@@ -6,7 +6,8 @@
         "nav.about": "About",
         "nav.auto": "Auto",
         "nav.dark": "Dark",
-        "nav.light": "Light"
+        "nav.light": "Light",
+        "list.title": "Post list"
     },
     "zh": {
         "base.site.name": "Blog",
@@ -15,6 +16,7 @@
         "nav.about": "关于",
         "nav.auto": "自动",
         "nav.dark": "深色",
-        "nav.light": "浅色"
+        "nav.light": "浅色",
+        "list.title": "文章列表"
     }
 }

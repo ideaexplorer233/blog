@@ -17,12 +17,15 @@ const t = createTranslation(Astro.currentLocale);
             </li>
             <li class="select-none font-extralight text-slate-400">-</li>
             <li>
-                <a href={getRelativeLocaleUrl(Astro.currentLocale!, "/")}
+                <a href={getRelativeLocaleUrl(Astro.currentLocale!, "/posts")}
                     >{t("nav.posts")}</a
                 >
             </li>
             <li class="select-none font-extralight text-slate-400">/</li>
-            <li><a href="/about">{t("nav.about")}</a></li>
+            <li>
+                <a href={getRelativeLocaleUrl(Astro.currentLocale!, "/about")}
+                    >{t("nav.about")}</a>
+            </li>
             <li class="grow"></li>
             <LanguageBtn />
             <DarkModeBtn client:only="svelte">

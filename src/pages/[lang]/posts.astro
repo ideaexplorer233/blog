@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+
+import PageLayout from "../../layouts/PageLayout.astro";
+import ListItem from "../../components/ListItem.astro";
+
+import { getLangPaths } from "../../i18n/utils";
+export const getStaticPaths = getLangPaths;
+
+let list = await getCollection("posts");
+list = list.filter((data) => data.slug.startsWith(Astro.currentLocale!));
+
+import { createTranslation } from "../../i18n/utils";
+const t = createTranslation(Astro.currentLocale);
+---
+
+<PageLayout>
+    <h1>{t("list.title")}</h1>
+    <ul>
+        {list.map((entry) => <ListItem data={entry} />)}
+    </ul>
+</PageLayout>
