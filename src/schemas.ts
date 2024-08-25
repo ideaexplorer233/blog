@@ -1,5 +1,6 @@
 import { z, defineCollection } from "astro:content";
 
+// TODO: Add default values
 export const postSchema = defineCollection({
     type: "content",
     schema: z.object({

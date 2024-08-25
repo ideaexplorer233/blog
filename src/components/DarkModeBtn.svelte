@@ -28,6 +28,7 @@
                 body.classList.remove("light");
         }
     }
+    // TODO: Aria-label i18n
 </script>
 
 <li class="select-none font-extralight text-slate-400">/</li>

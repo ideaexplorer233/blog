@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import PageLayout from "./PageLayout.astro";
 
 import "@shikijs/twoslash/style-rich.css";
+import SideBar from "../components/SideBar.astro";
 
 interface Props {
     content: CollectionEntry<"posts">;
@@ -12,5 +13,7 @@ const { Content, headings } = await Astro.props.content.render();
 ---
 
 <PageLayout>
+    <!-- TODO: Details -->
     <Content />
+    <SideBar headings={headings} slot="menu" />
 </PageLayout>
