@@ -3,11 +3,16 @@ import BaseLayout from "./BaseLayout.astro";
 ---
 
 <BaseLayout>
-    <div class="flex justify-center p-4 gap-4">
-        <slot name="menu" />
+    <div class="flex flex-row justify-center">
         <main
-            class="prose dark:prose-invert
-            prose-a:decoration-[0.15em]
+            class="prose dark:prose-invert w-full
+            prose-headings:relative [&>a]:prose-headings:absolute
+            [&>a]:prose-headings:hidden [&>a]:hover:prose-headings:flex [&>a]:hover:prose-h1:hidden
+            [&>a]:hover:prose-headings:w-6 [&>a]:hover:prose-headings:h-6
+            [&>a]:hover:prose-headings:justify-center [&>a]:hover:prose-headings:align-middle
+            [&>a]:prose-headings:-left-6 [&>a:hover]:prose-headings:text-sky500
+            [&>a]:prose-headings:text-slate-700/60 [&>a]:prose-headings:dark:text-slate-300/65
+            prose-a:decoration-[0.1em]
             prose-a:bg-gradient-to-t prose-a:from-sky-500/75 prose-a:from-50% prose-a:to-50%
             prose-a:relative prose-a:bg-[0_0%] prose-a:bg-[length:100%_200%]
             prose-a:duration-300 prose-a:transition-all hover:prose-a:bg-[0_100%]
@@ -15,5 +20,6 @@ import BaseLayout from "./BaseLayout.astro";
         >
             <slot />
         </main>
+        <slot name="menu" />
     </div>
 </BaseLayout>
