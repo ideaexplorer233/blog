@@ -1,13 +1,7 @@
 @import "./content.css";
 
-@font-face {
-    font-family: "fusion-pixel";
-    src: url("/fonts/fusion-pixel-10px-monospaced-zh_hans.woff2");
-}
-
 body {
     font-family:
-        fusion-pixel,
         system-ui,
         -apple-system,
         BlinkMacSystemFont,
